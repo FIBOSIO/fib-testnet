@@ -14,11 +14,11 @@
 
 ## step 2 start dev
 
-	fibos index.js dev  // start No.1 bp FIBOS, do all things, init, bp start and make blocks 
+	1) fibos index.js dev  // start No.1 bp FIBOS, do all things, init, bp start and make blocks 
 	
-	fibos index.js dev 2 or fibos index.js dev 21 // also can  start more one bps what you want
+	or fibos index.js dev 2 or fibos index.js dev 21 // also can  start more one bps what you want
 
- 	fibos morebps.js dev 2 5  // start No.2 bp  No.5 bp   http port is 8802 to 8805 
+ 	2) fibos morebps.js dev 2 5  //where you start one want start more bps join testnet , this can start No.2 to No.5 bps  , http port is 8802 to 8805 
 
 
 ## more info
