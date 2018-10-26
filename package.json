@@ -1,0 +1,12 @@
+{
+	"name": "testnet",
+	"version": "1.0.0",
+	"description": "",
+	"repository": "",
+	"keywords": "",
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"fibos.js": "^0.3.1"
+	}
+}
