@@ -75,7 +75,8 @@
         {"name": "connector_weight", "type": "float64"},
         {"name": "maximum_exchange", "type": "asset"},
         {"name": "reserve_supply", "type": "asset"},
-        {"name": "reserve_connector_balance", "type": "asset"}
+        {"name": "reserve_connector_balance", "type": "asset"},
+        {"name":"expiration","type":"time_point_sec"}
      ]
   },{
      "name": "exissue",
@@ -183,6 +184,7 @@
         {"name":"to","type":"account_name"},
         {"name":"quantity","type":"extended_asset"},
         {"name":"expiration","type":"time_point_sec"},
+        {"name":"expiration_to","type":"time_point_sec"},
         {"name":"memo","type":"string"}
       ]
     },{
