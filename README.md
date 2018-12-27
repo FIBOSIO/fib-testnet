@@ -1,3 +1,25 @@
+## 环境
+
+	fibos版本： v1.5.0.1+
+	fibosjs：v0.3.4+
+	
+## step 1 install
+	
+	fibos --install   
+
+## step 2 start dev
+
+	1) fibos index.js dev  // start No.1 bp FIBOS, do all things, init, bp start and make blocks 
+	
+	or fibos index.js dev 2 or fibos index.js dev 21 // also can  start more one bps what you want
+
+ 	2) fibos morebps.js dev 2 5  //where you start one want start more bps join testnet , this can start No.2 to No.5 bps  , http port is 8802 to 8805 
+
+## cmd
+
+	killall fibos // kill  fibos
+
+
 ## 启动过程
 
 ## 1.启动创世节点服务
@@ -22,21 +44,7 @@
 	common/bpaccounts.json -------- bp accounts info
 	common/fibossystems.json --------fibos systems accounts info
 
-## cmd
 
-	killall fibos // kill  fibos
-	
-## step 1 install
-	
-	fibos --install   
-
-## step 2 start dev
-
-	1) fibos index.js dev  // start No.1 bp FIBOS, do all things, init, bp start and make blocks 
-	
-	or fibos index.js dev 2 or fibos index.js dev 21 // also can  start more one bps what you want
-
- 	2) fibos morebps.js dev 2 5  //where you start one want start more bps join testnet , this can start No.2 to No.5 bps  , http port is 8802 to 8805 
 
 
 ## more info
