@@ -2,8 +2,8 @@
 	"chainId": "68cee14f598d88d340b50940b6ddfba28c444b46cd5f33201ace82c78896793a",
 	"public_key": "FO6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
 	"private_key": "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3",
-	"systems": ["fibos", "fiboscouncil"],
-	"fibossystems": ["fibosmaster1"],
+	"systems": ["fibos"],
+	"fibossystems": ["fiboscouncil", "fibosmaster1", "eth2fibosgtw"],
 	"token": {
 		"EOS": {
 			"max_supply": "10000000000.0000 EOS",
