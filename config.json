@@ -2,8 +2,8 @@
 	"chainId": "68cee14f598d88d340b50940b6ddfba28c444b46cd5f33201ace82c78896793a",
 	"public_key": "FO6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
 	"private_key": "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3",
-	"systems": ["fibos"],
-	"fibossystems": ["fiboscouncil", "fibosmaster1", "eth2fibosgtw"],
+	"systems": ["fibos", "fiboscouncil", "eth2fibosgtw"],
+	"fibossystems": ["fibosmaster1"],
 	"token": {
 		"EOS": {
 			"max_supply": "10000000000.0000 EOS",
@@ -15,8 +15,15 @@
 			"max_exchange": "10000000000.0000 FO",
 			"connector_weight": 0.11,
 			"reserve_supply": "5000000000.0000 FO",
-			"reserve_connector_balance": "550000.0000 EOS",
-			"can_issue": 1
+			"reserve_connector_balance": "550000.0000 EOS"
+		},
+		"FOD": {
+			"supply": "100000000000.000000 FOD",
+			"max_supply": "100000000000.000000 FOD",
+			"max_exchange": "0.000000 FOD",
+			"connector_weight": 0,
+			"reserve_supply": "0.000000 FOD",
+			"reserve_connector_balance": "0.0000 FO"
 		}
 	},
 	"bios_httpEndpoint": "http://127.0.0.1:8870",
