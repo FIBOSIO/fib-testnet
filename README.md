@@ -1,12 +1,7 @@
-## tips
+## 环境
 
-	common/config_dev.json -------- p2p,http info
-	common/bpaccounts.json -------- bp accounts info
-	common/fibossystems.json --------fibos systems accounts info
-
-## cmd
-
-	killall fibos // kill  fibos
+	fibos版本： v1.5.0.1+
+	fibosjs：v0.3.4+
 	
 ## step 1 install
 	
@@ -19,6 +14,37 @@
 	or fibos index.js dev 2 or fibos index.js dev 21 // also can  start more one bps what you want
 
  	2) fibos morebps.js dev 2 5  //where you start one want start more bps join testnet , this can start No.2 to No.5 bps  , http port is 8802 to 8805 
+
+## cmd
+
+	killall fibos // kill  fibos
+
+
+## 启动过程
+
+## 1.启动创世节点服务
+
+## 2.初始化系统
+	1）创建系统账户
+
+## 3.初始化系账户
+
+## 4.启动第一个BP节点
+
+## 5.BP节点给自己投票
+
+## 6.设置数量开关BP开始出块
+
+## 7.权限移交
+
+
+## tips
+
+	common/config_dev.json -------- p2p,http info
+	common/bpaccounts.json -------- bp accounts info
+	common/fibossystems.json --------fibos systems accounts info
+
+
 
 
 ## more info

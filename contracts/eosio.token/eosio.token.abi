@@ -70,13 +70,16 @@
      "name": "excreate",
      "base": "",
      "fields": [
-        {"name":"issuer", "type":"account_name"},
-        {"name":"maximum_supply", "type":"asset"},
+        {"name": "issuer", "type":"account_name"},
+        {"name": "maximum_supply", "type":"asset"},
         {"name": "connector_weight", "type": "float64"},
         {"name": "maximum_exchange", "type": "asset"},
         {"name": "reserve_supply", "type": "asset"},
         {"name": "reserve_connector_balance", "type": "asset"},
-        {"name":"expiration","type":"time_point_sec"}
+        {"name": "expiration","type":"time_point_sec"},
+        {"name": "buy_fee", "type": "float64"},
+        {"name": "sell_fee", "type": "float64"},
+        {"name": "connector_balance_issuer", "type": "account_name"}
      ]
   },{
      "name": "exissue",
@@ -92,6 +95,14 @@
      "fields": [
        {"name":"from", "type":"account_name"},
         {"name":"quantity", "type":"extended_asset"},
+        {"name":"memo", "type":"string"}
+     ]
+  },{
+     "name": "exshare",
+     "base": "",
+     "fields": [
+        {"name":"quantity", "type":"extended_asset"},
+        {"name":"tosym", "type":"extended_symbol"},
         {"name":"memo", "type":"string"}
      ]
   },{
@@ -155,6 +166,14 @@
         {"name":"memo", "type":"string"}
       ]
     },{
+      "name": "setposition",
+      "base": "",
+      "fields": [
+        {"name":"sym", "type":"extended_symbol"},
+        {"name":"position", "type":"bool"},
+        {"name":"memo","type":"string"}
+      ]
+    },{
       "name": "currency_stats",
       "base": "",
       "fields": [
@@ -165,7 +184,11 @@
         {"name":"connector_weight", "type":"float64"},
         {"name":"connector_balance", "type":"asset"},
         {"name":"reserve_supply", "type":"asset"},
-        {"name":"reserve_connector_balance", "type":"asset"}
+        {"name":"reserve_connector_balance", "type":"asset"},
+        {"name":"connector_balance_issuer", "type":"account_name"},
+        {"name":"buy_fee", "type":"float64"},
+        {"name":"sell_fee", "type":"float64"},
+        {"name":"position", "type":"bool"}
       ]
     },{
       "name": "exunlock",
@@ -188,11 +211,25 @@
         {"name":"memo","type":"string"}
       ]
     },{
+      "name": "delmigrate",
+      "base": "",
+      "fields": [
+        {"name":"memo","type":"string"}
+      ]
+    },{
+      "name": "migrate_table",
+      "base": "",
+      "fields": [
+        {"name":"primary", "type":"uint64"},
+        {"name":"sym", "type":"extended_symbol"}
+      ]
+    },{
       "name": "receipt",
       "base": "",
       "fields": [
         {"name":"in","type":"extended_asset"},
-        {"name":"out","type":"extended_asset"}
+        {"name":"out","type":"extended_asset"},
+        {"name":"fee","type":"extended_asset"}
       ]
     },{
       "name": "snapshot",
@@ -242,6 +279,10 @@
       "type": "exretire",
       "ricardian_contract": ""
     }, {
+      "name": "exshare",
+      "type": "exshare",
+      "ricardian_contract": ""
+    }, {
       "name": "excreate",
       "type": "excreate",
       "ricardian_contract": ""
@@ -285,6 +326,10 @@
       "name": "snapshot",
       "type": "snapshot",
       "ricardian_contract": ""
+    },{
+      "name": "setposition",
+      "type": "setposition",
+      "ricardian_contract": ""
     }
   ],
   "tables": [{
@@ -308,6 +353,12 @@
     },{
       "name": "lockaccounts",
       "type": "lock_account",
+      "index_type": "i64",
+      "key_names" : ["primary"],
+      "key_types" : ["uint64"]
+    },{
+      "name": "migratetable",
+      "type": "migrate_table",
       "index_type": "i64",
       "key_names" : ["primary"],
       "key_types" : ["uint64"]
