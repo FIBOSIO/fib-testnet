@@ -242,8 +242,7 @@
         {"name":"supply","type":"asset"},
         {"name":"reserve_supply","type":"asset"},
         {"name":"connector_balance","type":"asset"},
-        {"name":"reserve_connector_balance","type":"asset"},
-        {"name":"connector_balance_issuer","type":"account_name"}
+        {"name":"reserve_connector_balance","type":"asset"}
       ]
     }
   ],
