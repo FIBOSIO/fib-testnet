@@ -549,6 +549,11 @@
       "name": "regproxy",
       "type": "regproxy",
       "ricardian_contract": ""
+   },
+   {
+      "name": "setstake",
+      "type": "setstake",
+      "ricardian_contract": ""
    },{
       "name": "voteproducer",
       "type": "voteproducer",
