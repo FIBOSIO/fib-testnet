@@ -11,11 +11,11 @@
 		},
 		"FO": {
 			"supply": "O",
-			"max_supply": "100000000000.0000 FO",
-			"max_exchange": "10000000000.0000 FO",
-			"connector_weight": 0.11,
-			"reserve_supply": "5000000000.0000 FO",
-			"reserve_connector_balance": "550000.0000 EOS"
+			"max_supply": "10000000000.0000 FO",
+			"max_exchange": "0.0000 FO",
+			"connector_weight": 0,
+			"reserve_supply": "0.0000 FO",
+			"reserve_connector_balance": "0.0000 FO"
 		},
 		"FOD": {
 			"supply": "100000000000.000000 FOD",

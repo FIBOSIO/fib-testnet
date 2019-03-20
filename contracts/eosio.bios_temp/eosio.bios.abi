@@ -40,6 +40,13 @@
         {"name":"bid", "type":"asset"}
       ]
     },{
+      "name": "bidrefund",
+      "base": "",
+      "fields": [
+        {"name":"bidder",  "type":"account_name"},
+        {"name":"newname", "type":"account_name"}
+      ]
+    },{
       "name": "permission_level_weight",
       "base": "",
       "fields": [
@@ -417,7 +424,7 @@
         {"name":"quote", "type":"connector"}
       ]
     }, {
-       "name": "namebid_info",
+       "name": "name_bid",
        "base": "",
        "fields": [
           {"name":"newname", "type":"account_name"},
@@ -425,8 +432,35 @@
           {"name":"high_bid", "type":"int64"},
           {"name":"last_bid_time", "type":"uint64"}
        ]
-    }
-   ],
+    }, {
+     "name": "bid_refund",
+     "base": "",
+     "fields": [
+       {"name":"bidder", "type":"account_name"},
+       {"name":"amount", "type":"asset"}
+     ]
+   }, {
+     "name": "account",
+     "base": "",
+     "fields": [
+       {"name":"owner", "type":"account_name"},
+       {"name":"balance", "type":"asset"}
+     ]
+   }, {
+     "name": "vote_record",
+     "base": "",
+     "fields": [
+        {"name":"owner", "type":"account_name"},
+        {"name":"update_time", "type":"time_point_sec"},
+        {"name":"claimable", "type":"asset"}
+     ]
+   }, {
+     "name": "claimbonus",
+     "base": "",
+     "fields": [
+        {"name":"owner", "type":"account_name"}
+     ]
+   }],
    "actions": [{
      "name": "newaccount",
      "type": "newaccount",
@@ -504,6 +538,10 @@
       "type": "bidname",
       "ricardian_contract": ""
    },{
+      "name": "bidrefund",
+      "type": "bidrefund",
+      "ricardian_contract": ""
+   },{
       "name": "unregprod",
       "type": "unregprod",
       "ricardian_contract": ""
@@ -511,10 +549,6 @@
       "name": "regproxy",
       "type": "regproxy",
       "ricardian_contract": ""
-   },{
-      "name": "setstake",
-      "type": "setstake",
-      "ricardian_contract": ""  
    },{
       "name": "voteproducer",
       "type": "voteproducer",
@@ -550,6 +584,10 @@
     },{
       "name": "setparams",
       "type": "setparams",
+      "ricardian_contract": ""
+    },{
+      "name": "claimbonus",
+      "type": "claimbonus",
       "ricardian_contract": ""
     }],
    "tables": [{
@@ -602,11 +640,29 @@
       "key_types" : ["uint64"]
     },{
        "name": "namebids",
-       "type": "namebid_info",
+       "type": "name_bid",
        "index_type": "i64",
        "key_names" : ["newname"],
        "key_types" : ["account_name"]
-    }
+    },{
+     "name": "bidrefunds",
+     "type": "bid_refund",
+     "index_type": "i64",
+     "key_names" : ["bidder"],
+     "key_types" : ["account_name"]
+   },{
+     "name": "lockdlg",
+     "type": "account",
+     "index_type": "i64",
+     "key_names" : ["owner"],
+     "key_types" : ["uint64"]
+   },{
+     "name": "record",
+     "type": "vote_record",
+     "index_type": "i64",
+     "key_names" : ["owner"],
+     "key_types" : ["uint64"]
+   }
    ],
    "ricardian_clauses": [],
    "abi_extensions": []

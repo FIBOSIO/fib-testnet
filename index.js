@@ -8,7 +8,7 @@ var FIBOS = require('fibos.js');
 var cmdarr = process.argv;
 
 if (cmdarr.length < 3 && ['dev'].indexOf(cmdarr[2]) == -1) {
-	console.notice('cmd like this: fibos ghost.js dev');
+	console.notice('cmd like this: fibos index.js dev');
 	process.exit(0);
 }
 
