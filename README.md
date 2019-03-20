@@ -1,7 +1,7 @@
 ## 环境
 
 	fibos版本： v1.5.0.1+
-	fibosjs：v0.3.4+
+	fibosjs：v0.3.6+
 	
 ## step 1 install
 	
@@ -9,11 +9,11 @@
 
 ## step 2 start dev
 
-	1) fibos index.js dev  // start No.1 bp FIBOS, do all things, init, bp start and make blocks 
+	1) fibos index.js  // start No.1 bp FIBOS, do all things, init, bp start and make blocks 
 	
-	or fibos index.js dev 2 or fibos index.js dev 21 // also can  start more one bps what you want
+	or fibos index.js  2 or fibos index.js  21 // also can  start more one bps what you want
 
- 	2) fibos morebps.js dev 2 5  //where you start one want start more bps join testnet , this can start No.2 to No.5 bps  , http port is 8802 to 8805 
+ 	2) fibos morebps.js 2 5  //where you start one want start more bps join testnet , this can start No.2 to No.5 bps  , http port is 8802 to 8805 
 
 ## cmd
 
@@ -50,6 +50,7 @@
 ## more info
 
 ### http
+	http://127.0.0.1:8870
 
 	http://127.0.0.1:8801  
 	http://127.0.0.1:8802 
