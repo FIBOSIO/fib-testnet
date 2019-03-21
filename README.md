@@ -3,53 +3,82 @@
 	fibos版本： v1.5.0.1+
 	fibosjs：v0.3.6+
 	
-## step 1 install
+## 安装依赖
+
+	安装 fibos
+
+		curl -s https://fibos.io/download/installer.sh | sh
 	
+	安装依赖文件
+
 	fibos --install   
 
-## step 2 start dev
+## 启动测试网
 
-	1) fibos index.js  // start No.1 bp FIBOS, do all things, init, bp start and make blocks 
+	1) fibos index.js  // 初始化并启动一个bp节点
 	
-	or fibos index.js  2 or fibos index.js  21 // also can  start more one bps what you want
+			or fibos index.js  2 or fibos index.js  21 // 初始化并启动多个bp节点
 
- 	2) fibos morebps.js 2 5  //where you start one want start more bps join testnet , this can start No.2 to No.5 bps  , http port is 8802 to 8805 
+ 	2) fibos morebps.js 2 5  //当初始化完成后，更多bp节点接入 。这个例子是把 2到5名的bp节点启动并接入进来，他们的  http 端口是 8802 到 8805，p2p 是 9801 到 9805
 
-## cmd
+## 其他命令
 
-	killall fibos // kill  fibos
-
-
-## 启动过程
-
-## 1.启动创世节点服务
-
-## 2.初始化系统
-	1）创建系统账户
-
-## 3.初始化系账户
-
-## 4.启动第一个BP节点
-
-## 5.BP节点给自己投票
-
-## 6.设置数量开关BP开始出块
-
-## 7.权限移交
+	killall fibos // 关闭所有fibos服务
 
 
-## tips
+## 启动过程说明
 
-	common/config_dev.json -------- p2p,http info
-	common/bpaccounts.json -------- bp accounts info
-	common/fibossystems.json --------fibos systems accounts info
+#### 1.启动创世节点服务
+
+#### 2.初始化系统
+
+	1）注册系统账户
+	2）注册fibos主网相关账号
+	3）注册eosio.token合约
+	4）创建EOS
+	5）创建FO
+	6）创建FOD
+	7）注册eosio.msig合约
+	8）注册eosio.system临时合约
+	9）系统账号权限移交eosio
+
+#### 3.初始bp账户
+
+#### 4.启动第一个BP节点
+
+#### 5.BP节点给自己投票
+	1）第一个bp正常出块
+
+#### 6.其他系统设置
+
+	1）直接设置total_activated_stake 为 1500000000000，让BP能够开始出块
+	2）设置内存随着出块增长 bytes_per_block = 1024
+
+#### 7.权限移交
+
+	1）加载eosio.system合约
+	2）eosio权限移交给eosio.prods
+
+#### 8.关闭创世节点服务
+
+
+## 文件说明
+
+	common/config.json -------- 配置文件，数据存储位置，p2p地址
+
+	common/bpaccounts.json -------- 所有初始bp信息
+
+	common/fibossystems.json -------- fibos注册账号信息
+
+	common/systems.json -------- fibos系统账号信息
 
 
 
 
-## more info
+## 更多信息
 
 ### http
+
 	http://127.0.0.1:8870
 
 	http://127.0.0.1:8801  
@@ -78,6 +107,8 @@
 	http://127.0.0.1:8821
 
 ### p2p
+	
+	"127.0.0.1:9870",
 
 	"127.0.0.1:9801",
 	"127.0.0.1:9802",
