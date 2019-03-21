@@ -1,6 +1,6 @@
 const fibos = require('fibos');
 const fs = require("fs");
-const config = require('./common/config_dev.json');
+const config = require('./common/config.json');
 
 console.notice("start FIBOS full node");
 
@@ -23,8 +23,9 @@ fibos.load("http", {
 
 fibos.load("net", {
 	"p2p-peer-address": config.p2p_peer_address,
-	"max-clients": 100,
+	"max-clients": 0,
 	"p2p-listen-endpoint": "0.0.0.0:9870",
+	"p2p-max-nodes-per-host": 25,
 	"agent-name": "FIBOS Full"
 });
 
