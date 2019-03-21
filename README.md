@@ -11,7 +11,7 @@
 	
 	安装依赖文件
 
-	fibos --install   
+		fibos --install   
 
 ## 启动测试网
 
