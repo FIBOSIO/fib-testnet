@@ -211,17 +211,13 @@
         {"name":"memo","type":"string"}
       ]
     },{
-      "name": "delmigrate",
+      "name": "exlock",
       "base": "",
       "fields": [
+        {"name":"owner","type":"account_name"},
+        {"name":"quantity","type":"extended_asset"},
+        {"name":"expiration","type":"time_point_sec"},
         {"name":"memo","type":"string"}
-      ]
-    },{
-      "name": "migrate_table",
-      "base": "",
-      "fields": [
-        {"name":"primary", "type":"uint64"},
-        {"name":"sym", "type":"extended_symbol"}
       ]
     },{
       "name": "receipt",
@@ -316,6 +312,10 @@
       "type": "exunlock",
       "ricardian_contract": ""
     }, {
+      "name": "exlock",
+      "type": "exlock",
+      "ricardian_contract": ""
+    },{
       "name": "exlocktrans",
       "type": "exlocktrans",
       "ricardian_contract": ""
@@ -354,12 +354,6 @@
     },{
       "name": "lockaccounts",
       "type": "lock_account",
-      "index_type": "i64",
-      "key_names" : ["primary"],
-      "key_types" : ["uint64"]
-    },{
-      "name": "migratetable",
-      "type": "migrate_table",
       "index_type": "i64",
       "key_names" : ["primary"],
       "key_types" : ["uint64"]

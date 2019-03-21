@@ -7,16 +7,16 @@ var FIBOS = require('fibos.js');
 
 var cmdarr = process.argv;
 
-if (cmdarr.length < 3 && ['dev'].indexOf(cmdarr[2]) == -1) {
-	console.notice('cmd like this: fibos ghost.js dev');
+if (cmdarr.length < 2) {
+	console.notice('cmd like this: fibos index.js');
 	process.exit(0);
 }
 
-var startbpnum = Number(cmdarr[3]) || 1;
+var startbpnum = Number(cmdarr[2]) || 1;
 
 var startev = cmdarr[2];
 
-console.notice('start ' + startev + ' testnet after 2 seconds');
+console.notice('start  testnet after 2 seconds');
 coroutine.sleep(2000);
 
 
@@ -24,10 +24,8 @@ test.setup();
 
 describe('FIBOS One Press Start', () => {
 	var p;
-	before(function() {
-	});
+	before(function() {});
 	it('create accounts files with pubkey and privatekey', function() {
-
 		["systems", "fibossystems"].forEach(function(fname) {
 			var filepath = "common/" + fname + ".json";
 			if (!fs.exists(filepath)) {
@@ -44,7 +42,6 @@ describe('FIBOS One Press Start', () => {
 				fs.writeFile(filepath, JSON.stringify(fileaccout));
 			}
 		});
-
 
 		var filepath = "common/bpaccounts.json";
 		if (fs.exists(filepath)) return;
@@ -67,7 +64,7 @@ describe('FIBOS One Press Start', () => {
 	//2 init bios
 	it('steps 1  bios_start', function() {
 		console.notice("steps 1 bios_start");
-		p = process.start('fibos', ['./lib/1_bios_start.js', startev]);
+		p = process.start('fibos', ['./lib/1_bios_start.js']);
 		var fibos = FIBOS({
 			chainId: config["chain_id"],
 			keyProvider: "",
@@ -98,7 +95,7 @@ describe('FIBOS One Press Start', () => {
 	});
 	//4 bpstart
 	it('steps 4 firstbp_start', function() {
-		var bpp = process.start('fibos', ['./lib/4_firstbp_start.js', startev]);
+		var bpp = process.start('fibos', ['./lib/4_firstbp_start.js']);
 		var bpfibos = FIBOS({
 			chainId: config["chain_id"],
 			keyProvider: "",
@@ -163,7 +160,7 @@ describe('FIBOS One Press Start', () => {
 
 	it('8 start more bps', function() {
 		if (startbpnum > 1) {
-			process.run('fibos', ['./morebps.js', startev, 2, startbpnum]);
+			process.run('fibos', ['./morebps.js', 2, startbpnum]);
 		}
 		console.notice('start FIBOS over');
 	});
