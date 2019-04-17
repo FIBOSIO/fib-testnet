@@ -454,7 +454,19 @@
      "fields": [
         {"name":"owner", "type":"account_name"}
      ]
-   }],
+   }, {
+      "name": "rate_record",
+      "base": "",
+      "fields": [
+         {"name":"annual_bonus_rate", "type":"float64"}
+      ]
+    }, {
+      "name": "setbonusrate",
+      "base": "",
+      "fields": [
+         {"name":"annual_rate", "type":"float64"}
+      ]
+    }],
    "actions": [{
      "name": "newaccount",
      "type": "newaccount",
@@ -583,6 +595,10 @@
       "name": "claimbonus",
       "type": "claimbonus",
       "ricardian_contract": ""
+    },{
+      "name": "setbonusrate",
+      "type": "setbonusrate",
+      "ricardian_contract": ""
     }],
    "tables": [{
       "name": "producers",
@@ -656,6 +672,12 @@
      "index_type": "i64",
      "key_names" : ["owner"],
      "key_types" : ["uint64"]
+   },{
+     "name": "rate",
+     "type": "rate_record",
+     "index_type": "i64",
+     "key_names" : [],
+     "key_types" : []
    }
    ],
    "ricardian_clauses": [],
