@@ -18,7 +18,7 @@
 			"reserve_connector_balance": "0.0000 FO"
 		},
 		"FOUSDT": {
-			"supply": "100000000000.000000 FOUSDT",
+			"supply": "50000000000.000000 FOUSDT",
 			"max_supply": "100000000000.000000 FOUSDT",
 			"max_exchange": "0.000000 FOUSDT",
 			"connector_weight": 0,
